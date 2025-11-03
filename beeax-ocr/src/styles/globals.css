@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --honey-yellow: #FFD572;
+  --earthy-brown: #7B5428;
+  --warm-beige: #F6E1B8;
+  --deep-brown: #503915;
+  --soft-white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--warm-beige) 0%, #F0D5A8 100%);
+  color: var(--deep-brown);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glass morphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Honey gradient backgrounds */
+.honey-gradient {
+  background: linear-gradient(135deg, var(--honey-yellow) 0%, #FFC947 50%, var(--warm-beige) 100%);
+}
+
+.honey-gradient-dark {
+  background: linear-gradient(135deg, var(--earthy-brown) 0%, var(--deep-brown) 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--warm-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--honey-yellow);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--earthy-brown);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection colors */
+::selection {
+  background: var(--honey-yellow);
+  color: var(--deep-brown);
+}
+
+/* Focus states */
+*:focus {
+  outline: 2px solid var(--honey-yellow);
+  outline-offset: 2px;
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--honey-yellow);
+  color: var(--deep-brown);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 213, 114, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 213, 114, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--earthy-brown);
+  border: 2px solid var(--earthy-brown);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--earthy-brown);
+  color: var(--soft-white);
+  transform: translateY(-2px);
+}
+
+/* Card styles */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* Text gradients */
+.text-gradient {
+  background: linear-gradient(135deg, var(--honey-yellow) 0%, var(--earthy-brown) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loading animations */
+.honey-drop {
+  animation: honeyDrop 2s ease-in-out infinite;
+}
+
+@keyframes honeyDrop {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+/* Hexagon shapes */
+.hexagon {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+/* Animation utilities */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
